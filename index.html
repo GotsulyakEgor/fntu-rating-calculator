@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Калькулятор рейтингу з настільного тенісу ФНТУ онлайн</title>
+<meta name="description" content="Безкоштовний онлайн-калькулятор рейтингу ФНТУ: введіть рейтинг, вагу та результати матчів — отримайте новий рейтинг після турніру. Формули та приклади розрахунку.">
+<meta name="keywords" content="калькулятор рейтингу, рейтинг ФНТУ, настільний теніс, рейтинг настільний теніс Україна, розрахунок рейтингу, опорний рейтинг, вага рейтингу">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Калькулятор рейтингу ФНТУ">
+<meta name="theme-color" content="#2f5bff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c111f" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://example.com/">
+<link rel="alternate" hreflang="uk" href="https://example.com/">
+<link rel="alternate" hreflang="x-default" href="https://example.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Калькулятор рейтингу ФНТУ">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Калькулятор рейтингу з настільного тенісу ФНТУ">
+<meta property="og:description" content="Введіть рейтинг, вагу та результати матчів — одразу побачите новий рейтинг після турніру. Формули та приклади.">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Калькулятор рейтингу ФНТУ з настільного тенісу">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Калькулятор рейтингу з настільного тенісу ФНТУ">
+<meta name="twitter:description" content="Розрахунок рейтингу після турніру за правилами ФНТУ — онлайн, безкоштовно.">
+<meta name="twitter:image" content="https://example.com/og-image.png">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" href="style.css" as="style">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://example.com/#app",
+      "name": "Калькулятор рейтингу ФНТУ",
+      "url": "https://example.com/",
+      "description": "Онлайн-калькулятор рейтингу з настільного тенісу за правилами Федерації настільного тенісу України.",
+      "applicationCategory": "SportsApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "uk",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "UAH" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://example.com/#website",
+      "url": "https://example.com/",
+      "name": "Калькулятор рейтингу ФНТУ",
+      "inLanguage": "uk"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Як розрахувати рейтинг після турніру з настільного тенісу?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Для кожного матчу визначається внесок за різницею рейтингів. Потім додавання до рейтингу дорівнює K·(P−S)·10 / min(40; N+P+S), де P — сума внесків перемог, S — сума внесків поразок, N — початкова вага, K — коефіцієнт змагань." }
+        },
+        {
+          "@type": "Question",
+          "name": "Що таке опорний рейтинг у настільному тенісі?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Це стартовий рейтинг нового гравця. Він дорівнює меншому з двох значень: найвищого рейтингу серед гравців, яких переміг новачок, і найнижчого серед тих, кому він програв." }
+        },
+        {
+          "@type": "Question",
+          "name": "Що таке вага рейтингу?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Вага показує стабільність рейтингу та змагальну активність гравця. Після кожного турніру вага зростає на суму модулів внесків матчів, а з часом щомісяця зменшується. Чим більша вага, тим менше рейтинг змінюється за один турнір." }
+        },
+        {
+          "@type": "Question",
+          "name": "Як ФНТУ рахує рейтинг для нових гравців?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Новий гравець починає з опорного рейтингу й нульової ваги. З 2025 року у формулі приросту використовується додатковий доданок: ΔR = (P−S−2)·10 / (P+S), щоб рейтинг не зростав без реальних перемог." }
+        },
+        {
+          "@type": "Question",
+          "name": "Чи можна підставити рейтинг гравця автоматично?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Так. Почніть вводити прізвище у полі пошуку або в рядку суперника — калькулятор запропонує гравців з рейтингу ФНТУ й підставить їхній рейтинг і вагу. База оновлюється щодня." }
+        },
+        {
+          "@type": "Question",
+          "name": "Чи є цей калькулятор офіційним сервісом ФНТУ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ні. Це незалежний калькулятор, який виконує розрахунок за опублікованими правилами рейтингової системи ФНТУ. Офіційні дані дивіться на сайті федерації." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <span class="badge"><i></i> Настільний теніс · Україна</span>
+    <h1>Калькулятор рейтингу ФНТУ</h1>
+    <p class="lead">Знайдіть себе й суперників за прізвищем — рейтинг і вага підставляться з бази ФНТУ. Введіть результати матчів, навіть одним рядком, і одразу побачите новий рейтинг.</p>
+    <a class="hero-link" href="#formula">Як рахується рейтинг ↓</a>
+  </header>
+
+  <main>
+    <div class="layout">
+      <div>
+        <section class="card" aria-labelledby="h-me">
+          <h2 id="h-me">Мої дані</h2>
+          <div class="search-me">
+            <label class="field"><span>Знайти себе в рейтингу ФНТУ</span>
+              <input id="myName" type="text" data-player="me" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="ddList"
+                     placeholder="Прізвище, наприклад: Сіркевич" autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="next">
+            </label>
+            <p class="meta" id="myMeta" hidden></p>
+          </div>
+          <div class="fields">
+            <label class="field"><span>Рейтинг до турніру</span>
+              <input id="initialRating" data-num type="text" inputmode="decimal" enterkeyhint="next" placeholder="0.0" autocomplete="off">
+            </label>
+            <label class="field" id="weightField"><span>Вага до турніру</span>
+              <input id="initialWeight" data-num type="text" inputmode="decimal" enterkeyhint="next" placeholder="0" autocomplete="off">
+            </label>
+            <label class="field"><span>Коефіцієнт змагань</span>
+              <input id="contestFactor" data-num type="text" inputmode="decimal" enterkeyhint="done" placeholder="1.0" autocomplete="off">
+            </label>
+          </div>
+          <div class="note" id="newPlayerNote" hidden>
+            Нульовий рейтинг автоматично замінюється на <b>опорний</b>: <b id="baseRating">0.0</b>.
+            Опорний рейтинг — менше з двох: найвищий серед переможених і найнижчий серед тих, кому ви програли.
+          </div>
+          <label class="check" id="correctionRow" hidden>
+            <input type="checkbox" id="correction" checked>
+            <span>Корекція для нових гравців: ΔR = (P − S − 2) / (P + S).
+              Для гравців, які вже мають рейтинг, формула не змінюється.</span>
+          </label>
+        </section>
+
+        <section class="card" aria-labelledby="h-opp">
+          <h2 id="h-opp">Мої суперники <span class="hint">порожній рейтинг — рядок ігнорується</span></h2>
+          <div class="bulk">
+            <label class="field"><span>Швидкий ввід: усі матчі одним рядком</span>
+              <div class="bulk-row">
+                <input id="bulk" type="text" placeholder="52+ 47+ 44+ 50−   або   Сіркевич+ Мельтарин−" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" aria-describedby="bulkHelp">
+                <button class="btn primary" id="bulkApply" type="button">Додати</button>
+              </div>
+            </label>
+            <div class="chips" id="bulkPreview" aria-live="polite"></div>
+            <p class="hint" id="bulkHelp">Рейтинг або прізвище, а далі <b>+</b> (переміг) чи <b>−</b> (програв). Розділяйте пробілом.</p>
+          </div>
+          <p class="keys" aria-hidden="true">
+            <span><kbd>Enter</kbd> далі</span>
+            <span><kbd>↑</kbd><kbd>↓</kbd> між рядками</span>
+            <span><kbd>+</kbd> переміг</span>
+            <span><kbd>−</kbd> програв</span>
+            <span><kbd>Пробіл</kbd> змінити</span>
+            <span><kbd>Alt</kbd>+<kbd>Del</kbd> видалити</span>
+            <span><kbd>Esc</kbd> закрити підказки</span>
+          </p>
+          <div class="matches" id="matches"></div>
+          <p class="src" id="dataSrc"></p>
+          <div class="actions">
+            <button class="btn primary" id="addMatch" type="button">+ Додати суперника</button>
+            <button class="btn ghost" id="reset" type="button">Скинути все</button>
+          </div>
+        </section>
+      </div>
+
+      <aside class="card result" id="result" aria-live="polite" aria-label="Результат">
+        <div class="label">Мій рейтинг після турніру</div>
+        <div class="big" id="closingRating">0.0</div>
+        <div class="stats">
+          <div class="stat"><span class="label">Добавка</span><b id="closingDelta" data-sign="zero">0.0</b></div>
+          <div class="stat"><span class="label">Вага після</span><b id="closingWeight">0.0</b></div>
+          <div class="stat" style="grid-column: 1 / -1"><span class="label">Сума внесків (P − S)</span><b id="contribution">0</b></div>
+        </div>
+        <div class="warn" id="noRating" hidden>Рейтинг не нараховується: потрібна хоча б одна перемога над гравцем із рейтингом і підсумковий рейтинг вище 0.</div>
+      </aside>
+    </div>
+
+    <noscript><p class="note">Для роботи калькулятора потрібен JavaScript. Формули розрахунку наведено нижче на сторінці.</p></noscript>
+
+    <section class="doc" id="formula" aria-labelledby="h-formula">
+      <div class="card">
+        <h2 id="h-formula">Як рахується рейтинг у настільному тенісі</h2>
+        <p>Калькулятор працює за правилами рейтингової системи Федерації настільного тенісу України (ФНТУ). Нижче — повний розрахунок крок за кроком.</p>
+
+        <h3>1. Основні величини</h3>
+        <ul>
+          <li><b>R</b> — рейтинг гравця, сила гри в цифрах;</li>
+          <li><b>N</b> — вага рейтингу: його стабільність і змагальна активність гравця;</li>
+          <li><b>K</b> — коефіцієнт змагань: чим вищий рівень турніру, тим більший коефіцієнт;</li>
+          <li><b>P</b> — сума внесків усіх ваших перемог;</li>
+          <li><b>S</b> — сума внесків усіх ваших поразок (береться за модулем).</li>
+        </ul>
+
+        <h3>2. Внесок одного матчу</h3>
+        <p>Внесок залежить від різниці рейтингів <b>ΔR</b> між вами та суперником.</p>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Ситуація</th><th>Різниця рейтингів</th><th>Внесок</th></tr></thead>
+            <tbody>
+              <tr><td>Перемога над слабшим (або рівним) / поразка від сильнішого (або рівного)</td><td>до 2 включно</td><td>2</td></tr>
+              <tr><td>те саме</td><td>понад 2 до 20 включно</td><td>1</td></tr>
+              <tr><td>те саме</td><td>понад 20</td><td>0</td></tr>
+              <tr><td>Несподіваний результат: перемога над сильнішим / поразка від слабшого</td><td>будь-яка</td><td>(ΔR + 5) / 3, округлено</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Перемога над гравцем без рейтингу внеску не дає. Якщо у вас немає ні рейтингу, ні жодної перемоги, поразки внеску не дають. Внесок перемоги додається до <b>P</b>, внесок поразки — до <b>S</b>.</p>
+
+        <h3>3. Приріст рейтингу та вага</h3>
+        <div class="formula">ΔR = K · (P − S) · 10 / min(40; N + P + S)</div>
+        <div class="formula">R<sub>після</sub> = R<sub>до</sub> + ΔR</div>
+        <div class="formula">N<sub>після</sub> = N<sub>до</sub> + P + S<small>У калькуляторі вага, яку ви отримуєте за один турнір (P + S), обмежена значенням 20.</small></div>
+        <p>У знаменнику ніколи не буває більше 40: так вага захищає рейтинг від різких стрибків. Чим більша вага, тим повільніше змінюється рейтинг. Підсумковий рейтинг не може бути від'ємним.</p>
+
+        <h3>4. Новий гравець і опорний рейтинг</h3>
+        <p>Гравець без рейтингу стартує з <b>опорного рейтингу</b> та нульовою вагою. Опорний рейтинг — менше з двох значень: найвищий рейтинг серед тих, кого ви перемогли, і найнижчий серед тих, кому ви програли. Якщо перемог не було, рейтинг не нараховується.</p>
+        <div class="formula">R<sub>опорний</sub> = min( max рейтинг переможених ; min рейтинг тих, кому програли )</div>
+        <p>Для нових гравців ФНТУ запровадив корекцію, що не дозволяє піднімати рейтинг без реальних перемог:</p>
+        <div class="formula">ΔR<sub>нового</sub> = K · (P − S − 2) · 10 / min(40; P + S)</div>
+
+        <h3>5. Приклад розрахунку</h3>
+        <div class="example">
+          <p><b>Дано:</b> R = 45, N = 12, K = 1. Ви перемогли гравців з рейтингом 52, 47 і 44 та програли гравцю з рейтингом 50.</p>
+          <ul>
+            <li>перемога над 52 — суперник сильніший на 7: (7 + 5) / 3 = <b>4</b>;</li>
+            <li>перемога над 47 — сильніший на 2: <b>2</b>;</li>
+            <li>перемога над 44 — слабший на 1: <b>2</b>;</li>
+            <li>поразка від 50 — сильніший на 5: <b>1</b>.</li>
+          </ul>
+          <p>P = 4 + 2 + 2 = 8, S = 1. ΔR = 1 · (8 − 1) · 10 / (12 + 8 + 1) = 70 / 21 ≈ <b>+3,3</b>.</p>
+          <p>Новий рейтинг: 45 + 3,3 = <b>48,3</b>. Нова вага: 12 + 9 = <b>21</b>.</p>
+        </div>
+
+        <h3>6. Що ще впливає на рейтинг</h3>
+        <ul>
+          <li><b>Вага з часом зменшується</b>: щомісяця N<sub>нове</sub> = N − N² / 300. Тому важливо регулярно грати рейтингові турніри.</li>
+          <li><b>Чоловічий і жіночий рейтинги</b> співвідносяться як R<sub>чол</sub> = 0,75 · R<sub>жін</sub>. Жінка з рейтингом 60 відповідає чоловіку з рейтингом 45.</li>
+          <li><b>Довга відсутність на турнірах</b> зменшує рейтинг і вагу, а за нульової ваги гравець видаляється з системи.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="doc faq" aria-labelledby="h-faq">
+      <div class="card">
+        <h2 id="h-faq">Часті запитання</h2>
+        <details>
+          <summary>Як розрахувати рейтинг після турніру з настільного тенісу?</summary>
+          <p>Визначте внесок кожного матчу за різницею рейтингів, підсумуйте перемоги (P) та поразки (S) і підставте у формулу ΔR = K·(P−S)·10 / min(40; N+P+S). Калькулятор вище робить це автоматично.</p>
+        </details>
+        <details>
+          <summary>Що таке опорний рейтинг?</summary>
+          <p>Це стартовий рейтинг нового гравця: менше з двох значень — найвищий рейтинг серед переможених і найнижчий серед тих, кому він програв.</p>
+        </details>
+        <details>
+          <summary>Що таке вага рейтингу?</summary>
+          <p>Вага показує стабільність рейтингу та активність гравця. Після турніру вона зростає на P + S, а щомісяця зменшується. Чим більша вага, тим менше рейтинг змінюється за один турнір.</p>
+        </details>
+        <details>
+          <summary>Як ФНТУ рахує рейтинг для нових гравців?</summary>
+          <p>Новачок починає з опорного рейтингу та нульової ваги, а у формулі приросту є додатковий доданок: ΔR = (P−S−2)·10 / (P+S). Це не дає рейтингу зростати без реальних перемог.</p>
+        </details>
+        <details>
+          <summary>Де взяти коефіцієнт змагань?</summary>
+          <p>Коефіцієнт відповідає рівню турніру. Його визначає ФНТУ й зазвичай вказує в регламенті змагань. Для звичайного турніру використовуйте значення 1,0.</p>
+        </details>
+        <details>
+          <summary>Чи можна підставити рейтинг гравця автоматично?</summary>
+          <p>Так. Почніть вводити прізвище у полі «Знайти себе» або в рядку суперника — калькулятор запропонує гравців з рейтингу ФНТУ й підставить їхній рейтинг і вагу. База оновлюється щодня.</p>
+        </details>
+        <details>
+          <summary>Чи є цей калькулятор офіційним сервісом ФНТУ?</summary>
+          <p>Ні. Це незалежний калькулятор, який виконує розрахунок за опублікованими правилами. Офіційний рейтинг дивіться на сайті федерації.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Рейтинг ФНТУ в базі гравців оновлено: <time id="footerDate">—</time>.</p>
+    <p>Калькулятор не є офіційним сервісом ФНТУ. Розрахунок виконується за опублікованими правилами рейтингової системи.</p>
+  </footer>
+</div>
+
+<div class="bar is-hidden" id="bar" role="status">
+  <div class="b-main"><small>Рейтинг після турніру</small><b id="barRating">0,0</b></div>
+  <span class="b-delta" id="barDelta" data-sign="zero">0,0</span>
+  <button class="btn primary" type="button" id="barMore">Деталі</button>
+</div>
+
+<div class="dd" id="dd" hidden><div class="dd-list" id="ddList" role="listbox"></div></div>
+
+<template id="matchTpl">
+  <div class="match">
+    <span class="num">1</span>
+    <input class="name" type="text" name="opponentName" data-player="row" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="ddList" placeholder="Прізвище суперника" autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="next" aria-label="Прізвище суперника">
+    <input class="rate" type="text" name="opponentRating" inputmode="decimal" enterkeyhint="next" placeholder="Рейт." autocomplete="off" aria-label="Рейтинг суперника" title="Рейтинг суперника">
+    <div class="seg" role="radiogroup" aria-label="Результат матчу">
+      <label><input type="radio" value="win" checked><span>Переміг</span></label>
+      <label><input type="radio" value="lose"><span>Програв</span></label>
+    </div>
+    <span class="contrib" data-sign="zero" title="Внесок матчу">0</span>
+    <button class="icon delete" type="button" tabindex="-1" aria-label="Видалити суперника">✕</button>
+  </div>
+</template>
+
+<script src="players.js" defer></script>
+<script src="calculator.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
