@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gotsulyakegor.github.io/fntu-rating-calculator/sitemap.xml
+Sitemap: https://fntu-rating.com.ua/sitemap.xml
