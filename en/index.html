@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="ozqGhlNpc_JGOkOnswgreYj31OVd8CGRQPEUNbMfI3g" />
+<meta name="google-site-verification" content="J5Z8JGMyFNsga0oEyllxp-7xb4AVu66MVP6ahvw0Htg" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FNTU Table Tennis Rating Calculator (Ukraine) — online</title>
+<meta name="description" content="Free online calculator of the Ukrainian (FNTU) table tennis rating: enter your rating, weight and match results to get your new rating after a tournament. Formulas and a worked example included.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#2f5bff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c111f" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://fntu-rating.com.ua/en/">
+<link rel="alternate" hreflang="uk" href="https://fntu-rating.com.ua/">
+<link rel="alternate" hreflang="en" href="https://fntu-rating.com.ua/en/">
+<link rel="alternate" hreflang="x-default" href="https://fntu-rating.com.ua/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FNTU Rating Calculator">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:title" content="FNTU Table Tennis Rating Calculator (Ukraine)">
+<meta property="og:description" content="Enter your rating, weight and match results and see your new rating after the tournament. Formulas and a worked example included.">
+<meta property="og:url" content="https://fntu-rating.com.ua/en/">
+<meta property="og:image" content="https://fntu-rating.com.ua/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FNTU table tennis rating calculator">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FNTU Table Tennis Rating Calculator (Ukraine)">
+<meta name="twitter:description" content="Calculate your rating after a tournament under the rules of the Table Tennis Federation of Ukraine — online and free.">
+<meta name="twitter:image" content="https://fntu-rating.com.ua/og-image.png">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt">
+<link rel="preload" href="/style.css" as="style">
+<link rel="stylesheet" href="/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://fntu-rating.com.ua/en/#app",
+      "name": "FNTU Rating Calculator",
+      "alternateName": ["Ukrainian table tennis rating calculator", "Калькулятор рейтингу ФНТУ"],
+      "url": "https://fntu-rating.com.ua/en/",
+      "description": "Online calculator of the table tennis rating under the rules of the Table Tennis Federation of Ukraine (FNTU).",
+      "applicationCategory": "SportsApplication",
+      "applicationSubCategory": "Rating calculator",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "image": "https://fntu-rating.com.ua/og-image.png",
+      "about": { "@type": "Thing", "name": "FNTU table tennis rating" },
+      "audience": { "@type": "Audience", "audienceType": "Table tennis players, coaches and tournament organisers in Ukraine" },
+      "featureList": [
+        "Calculates your new rating after a tournament under FNTU rules",
+        "Calculates the new rating weight and the sum of contributions (P − S)",
+        "Looks players up by surname in the FNTU rating database and fills in rating and weight",
+        "Quick entry of all match results in one line",
+        "Step-by-step formula explanation with a worked example"
+      ],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "UAH" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://fntu-rating.com.ua/#website",
+      "url": "https://fntu-rating.com.ua/",
+      "name": "FNTU Rating Calculator",
+      "inLanguage": ["uk", "en"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://fntu-rating.com.ua/en/#webpage",
+      "url": "https://fntu-rating.com.ua/en/",
+      "name": "FNTU Table Tennis Rating Calculator (Ukraine) — online",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://fntu-rating.com.ua/#website" },
+      "mainEntity": { "@id": "https://fntu-rating.com.ua/en/#app" },
+      "mentions": { "@id": "https://ttmax.com.ua/#business" }
+    },
+    {
+      "@type": "Store",
+      "@id": "https://ttmax.com.ua/#business",
+      "name": "Butterfly UA",
+      "alternateName": "TTMAX",
+      "url": "https://ttmax.com.ua",
+      "parentOrganization": { "@id": "https://ttmax.com.ua/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://ttmax.com.ua/#org",
+      "name": "Butterfly UA",
+      "alternateName": "TTMAX",
+      "url": "https://ttmax.com.ua"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://fntu-rating.com.ua/en/#howto",
+      "name": "How to calculate your FNTU rating after a tournament",
+      "inLanguage": "en",
+      "tool": { "@id": "https://fntu-rating.com.ua/en/#app" },
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter your details", "text": "Find yourself in the rating by surname, or enter your rating, weight before the tournament and the tournament coefficient manually." },
+        { "@type": "HowToStep", "position": 2, "name": "Add opponents and results", "text": "Enter each opponent's rating or surname and mark a win or a loss; you can also enter all matches in one line." },
+        { "@type": "HowToStep", "position": 3, "name": "Check the result", "text": "The calculator shows your new rating after the tournament, the change, the new weight and the sum of contributions (P − S)." }
+      ]
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://fntu-rating.com.ua/en/#terms",
+      "name": "FNTU rating terms",
+      "inLanguage": "en",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "R (rating)", "description": "A player's rating: playing strength expressed as a number." },
+        { "@type": "DefinedTerm", "name": "N (rating weight)", "description": "How stable the rating is, and how active the player is in competitions." },
+        { "@type": "DefinedTerm", "name": "K (tournament coefficient)", "description": "The higher the level of the tournament, the bigger the coefficient." },
+        { "@type": "DefinedTerm", "name": "P", "description": "The sum of contributions of all of a player's wins in a tournament." },
+        { "@type": "DefinedTerm", "name": "S", "description": "The sum of contributions of all of a player's losses in a tournament (taken as an absolute value)." },
+        { "@type": "DefinedTerm", "name": "Reference rating", "description": "The starting rating of a new player: the lower of the highest rating among players they beat and the lowest rating among players they lost to." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do I calculate my rating after a table tennis tournament?", "acceptedAnswer": { "@type": "Answer", "text": "Work out the contribution of each match from the rating difference, add up the wins (P) and losses (S), and plug them into ΔR = K·(P−S)·10 / min(40; N+P+S). The calculator above does this automatically." } },
+        { "@type": "Question", "name": "What is the reference rating?", "acceptedAnswer": { "@type": "Answer", "text": "It is the starting rating of a new player: the lower of two values, the highest rating among the players they beat and the lowest rating among the players they lost to." } },
+        { "@type": "Question", "name": "What is rating weight?", "acceptedAnswer": { "@type": "Answer", "text": "Weight shows how stable a rating is and how active the player is. After a tournament it grows by P + S and every month it decreases. The bigger the weight, the less the rating changes in a single tournament." } },
+        { "@type": "Question", "name": "How does FNTU calculate the rating for new players?", "acceptedAnswer": { "@type": "Answer", "text": "A newcomer starts from the reference rating and zero weight, and the rating-change formula has an extra term: ΔR = (P−S−2)·10 / (P+S). This stops the rating from rising without real wins." } },
+        { "@type": "Question", "name": "Where do I get the tournament coefficient?", "acceptedAnswer": { "@type": "Answer", "text": "The coefficient depends on the level of the tournament. It is set by FNTU and is usually given in the competition regulations. For an ordinary tournament use 1.0." } },
+        { "@type": "Question", "name": "Can a player's rating be filled in automatically?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Start typing a surname in the “Find yourself” field or in an opponent's row and the calculator will suggest players from the FNTU rating and fill in their rating and weight. You can type in Latin letters (for example “Tretiak”). The database is updated daily." } },
+        { "@type": "Question", "name": "Is this an official FNTU service?", "acceptedAnswer": { "@type": "Answer", "text": "No. This is an independent calculator that follows the published rules. See the federation's website for the official rating." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <nav class="lang" aria-label="Language"><a href="/" hreflang="uk" lang="uk">UA</a><span aria-current="page">EN</span></nav>
+    <span class="badge"><i></i> Table tennis · Ukraine</span>
+    <h1>FNTU Rating Calculator</h1>
+    <p class="lead">Find yourself and your opponents by surname: rating and weight are filled in from the FNTU database. Enter your match results, even in a single line, and see your new rating at once.</p>
+    <a class="hero-link" href="#formula">How the rating is calculated ↓</a>
+  </header>
+
+  <main>
+    <div class="layout">
+      <div>
+        <section class="card" aria-labelledby="h-me">
+          <h2 id="h-me">My details</h2>
+          <div class="search-me">
+            <label class="field"><span>Find yourself in the FNTU rating</span>
+              <input id="myName" type="text" data-player="me" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="ddList"
+                     placeholder="Surname, e.g. Tretiak" autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="next">
+            </label>
+            <p class="meta" id="myMeta" hidden></p>
+          </div>
+          <div class="fields">
+            <label class="field"><span>Rating before the tournament</span>
+              <input id="initialRating" data-num type="text" inputmode="decimal" enterkeyhint="next" placeholder="0.0" autocomplete="off">
+            </label>
+            <label class="field" id="weightField"><span>Weight before the tournament</span>
+              <input id="initialWeight" data-num type="text" inputmode="decimal" enterkeyhint="next" placeholder="0" autocomplete="off">
+            </label>
+            <label class="field"><span>Tournament coefficient</span>
+              <input id="contestFactor" data-num type="text" inputmode="decimal" enterkeyhint="done" placeholder="1.0" autocomplete="off">
+            </label>
+          </div>
+          <div class="note" id="newPlayerNote" hidden>
+            A zero rating is automatically replaced by the <b>reference rating</b>: <b id="baseRating">0.0</b>.
+            The reference rating is the lower of two values: the highest rating among the players you beat and the lowest among those you lost to.
+          </div>
+          <label class="check" id="correctionRow" hidden>
+            <input type="checkbox" id="correction" checked>
+            <span>Correction for new players: ΔR = (P − S − 2) / (P + S).
+              For players who already have a rating the formula is unchanged.</span>
+          </label>
+        </section>
+
+        <section class="card" aria-labelledby="h-opp">
+          <h2 id="h-opp">My opponents <span class="hint">an empty rating — the row is ignored</span></h2>
+          <div class="bulk">
+            <label class="field"><span>Quick entry: all matches in one line</span>
+              <div class="bulk-row">
+                <input id="bulk" type="text" placeholder="52+ 47+ 44+ 50−   or   Tretiak+ Limonov−" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" aria-describedby="bulkHelp">
+                <button class="btn primary" id="bulkApply" type="button">Add</button>
+              </div>
+            </label>
+            <div class="chips" id="bulkPreview" aria-live="polite"></div>
+            <p class="hint" id="bulkHelp">A rating or a surname, then <b>+</b> (won) or <b>−</b> (lost). Separate entries with spaces.</p>
+          </div>
+          <p class="keys" aria-hidden="true">
+            <span><kbd>Enter</kbd> next</span>
+            <span><kbd>↑</kbd><kbd>↓</kbd> between rows</span>
+            <span><kbd>+</kbd> won</span>
+            <span><kbd>−</kbd> lost</span>
+            <span><kbd>Space</kbd> toggle</span>
+            <span><kbd>Alt</kbd>+<kbd>Del</kbd> delete</span>
+            <span><kbd>Esc</kbd> close suggestions</span>
+          </p>
+          <div class="matches" id="matches"></div>
+          <p class="src" id="dataSrc"></p>
+          <div class="actions">
+            <button class="btn primary" id="addMatch" type="button">+ Add opponent</button>
+            <button class="btn ghost" id="reset" type="button">Reset all</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="side">
+        <aside class="card result" id="result" aria-live="polite" aria-label="Result">
+          <div class="label">My rating after the tournament</div>
+          <div class="big" id="closingRating">0.0</div>
+          <div class="stats">
+            <div class="stat"><span class="label">Change</span><b id="closingDelta" data-sign="zero">0.0</b></div>
+            <div class="stat"><span class="label">Weight after</span><b id="closingWeight">0.0</b></div>
+            <div class="stat" style="grid-column: 1 / -1"><span class="label">Sum of contributions (P − S)</span><b id="contribution">0</b></div>
+          </div>
+          <div class="warn" id="noRating" hidden>No rating is awarded: you need at least one win over a rated player and a final rating above 0.</div>
+        </aside>
+
+        <a class="ttmax-banner ttmax-banner--desktop"
+           href="https://ttmax.com.ua/ua?utm_source=fntu-rating&amp;utm_medium=banner&amp;utm_campaign=fntu_partner&amp;utm_content=desktop_sidebar_en"
+           rel="sponsored noopener" target="_blank">
+          <img src="/ttmax-banner.webp" width="1098" height="630"
+               alt="Butterfly UA — a shop of Butterfly table tennis equipment, ttmax.com.ua"
+               decoding="async">
+        </a>
+        <a class="ttmax-banner ttmax-banner--mobile"
+           href="https://ttmax.com.ua/ua?utm_source=fntu-rating&amp;utm_medium=banner&amp;utm_campaign=fntu_partner&amp;utm_content=mobile_after_result_en"
+           rel="sponsored noopener" target="_blank">
+          <img src="/ttmax-banner.webp" width="1098" height="630"
+               alt="Butterfly UA — a shop of Butterfly table tennis equipment, ttmax.com.ua"
+               loading="lazy" decoding="async">
+        </a>
+        <p class="ttmax-banner-note">Calculator partner</p>
+      </div>
+    </div>
+
+    <noscript><p class="note">The calculator needs JavaScript. The calculation formulas are given further down the page.</p></noscript>
+
+    <section class="doc" id="formula" aria-labelledby="h-formula">
+      <div class="card">
+        <h2 id="h-formula">How the table tennis rating is calculated</h2>
+        <p>The calculator follows the rules of the rating system of the Table Tennis Federation of Ukraine (FNTU). Below is the full calculation, step by step.</p>
+
+        <h3>1. Basic quantities</h3>
+        <ul>
+          <li><b>R</b> — the player's rating: playing strength expressed as a number;</li>
+          <li><b>N</b> — rating weight: how stable the rating is and how active the player is in competitions;</li>
+          <li><b>K</b> — tournament coefficient: the higher the level of the tournament, the bigger the coefficient;</li>
+          <li><b>P</b> — the sum of contributions of all your wins;</li>
+          <li><b>S</b> — the sum of contributions of all your losses (taken as an absolute value).</li>
+        </ul>
+
+        <h3>2. Contribution of a single match</h3>
+        <p>The contribution depends on the rating difference <b>ΔR</b> between you and your opponent.</p>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Situation</th><th>Rating difference</th><th>Contribution</th></tr></thead>
+            <tbody>
+              <tr><td>Win over a weaker (or equal) player / loss to a stronger (or equal) one</td><td>up to 2 inclusive</td><td>2</td></tr>
+              <tr><td>same</td><td>over 2 up to 20 inclusive</td><td>1</td></tr>
+              <tr><td>same</td><td>over 20</td><td>0</td></tr>
+              <tr><td>Unexpected result: win over a stronger player / loss to a weaker one</td><td>any</td><td>(ΔR + 5) / 3, rounded</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>A win over an unrated player gives no contribution. If you have neither a rating nor a single win, losses give no contribution either. The contribution of a win is added to <b>P</b>, the contribution of a loss to <b>S</b>.</p>
+
+        <h3>3. Rating change and weight</h3>
+        <div class="formula">ΔR = K · (P − S) · 10 / min(40; N + P + S)</div>
+        <div class="formula">R<sub>after</sub> = R<sub>before</sub> + ΔR</div>
+        <div class="formula">N<sub>after</sub> = N<sub>before</sub> + P + S<small>In the calculator, the weight you gain in one tournament (P + S) is capped at 20.</small></div>
+        <p>The denominator never exceeds 40: this is how weight protects the rating from sharp jumps. The bigger the weight, the more slowly the rating changes. The final rating cannot be negative.</p>
+
+        <h3>4. A new player and the reference rating</h3>
+        <p>A player without a rating starts from the <b>reference rating</b> and zero weight. The reference rating is the lower of two values: the highest rating among the players you beat and the lowest among those you lost to. If there were no wins, no rating is awarded.</p>
+        <div class="formula">R<sub>reference</sub> = min( max rating of players beaten ; min rating of players lost to )</div>
+        <p>For new players FNTU introduced a correction that stops the rating from rising without real wins:</p>
+        <div class="formula">ΔR<sub>new</sub> = K · (P − S − 2) · 10 / min(40; P + S)</div>
+
+        <h3>5. Worked example</h3>
+        <div class="example">
+          <p><b>Given:</b> R = 45, N = 12, K = 1. You beat players rated 52, 47 and 44 and lost to a player rated 50.</p>
+          <ul>
+            <li>win over 52 — the opponent is stronger by 7: (7 + 5) / 3 = <b>4</b>;</li>
+            <li>win over 47 — stronger by 2: <b>2</b>;</li>
+            <li>win over 44 — weaker by 1: <b>2</b>;</li>
+            <li>loss to 50 — stronger by 5: <b>1</b>.</li>
+          </ul>
+          <p>P = 4 + 2 + 2 = 8, S = 1. ΔR = 1 · (8 − 1) · 10 / (12 + 8 + 1) = 70 / 21 ≈ <b>+3.3</b>.</p>
+          <p>New rating: 45 + 3.3 = <b>48.3</b>. New weight: 12 + 9 = <b>21</b>.</p>
+        </div>
+
+        <h3>6. What else affects the rating</h3>
+        <ul>
+          <li><b>Weight decreases over time</b>: every month N<sub>new</sub> = N − N² / 300. That is why it is important to play rating tournaments regularly.</li>
+          <li><b>Men's and women's ratings</b> are related as R<sub>men</sub> = 0.75 · R<sub>women</sub>. A woman rated 60 corresponds to a man rated 45.</li>
+          <li><b>A long absence from tournaments</b> lowers rating and weight, and at zero weight the player is removed from the system.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="doc faq" aria-labelledby="h-faq">
+      <div class="card">
+        <h2 id="h-faq">Frequently asked questions</h2>
+        <details>
+          <summary>How do I calculate my rating after a table tennis tournament?</summary>
+          <p>Work out the contribution of each match from the rating difference, add up the wins (P) and losses (S), and plug them into ΔR = K·(P−S)·10 / min(40; N+P+S). The calculator above does this automatically.</p>
+        </details>
+        <details>
+          <summary>What is the reference rating?</summary>
+          <p>It is the starting rating of a new player: the lower of two values, the highest rating among the players they beat and the lowest among those they lost to.</p>
+        </details>
+        <details>
+          <summary>What is rating weight?</summary>
+          <p>Weight shows how stable a rating is and how active the player is. After a tournament it grows by P + S and every month it decreases. The bigger the weight, the less the rating changes in a single tournament.</p>
+        </details>
+        <details>
+          <summary>How does FNTU calculate the rating for new players?</summary>
+          <p>A newcomer starts from the reference rating and zero weight, and the rating-change formula has an extra term: ΔR = (P−S−2)·10 / (P+S). This stops the rating from rising without real wins.</p>
+        </details>
+        <details>
+          <summary>Where do I get the tournament coefficient?</summary>
+          <p>The coefficient depends on the level of the tournament. It is set by FNTU and is usually given in the competition regulations. For an ordinary tournament use 1.0.</p>
+        </details>
+        <details>
+          <summary>Can a player's rating be filled in automatically?</summary>
+          <p>Yes. Start typing a surname in the “Find yourself” field or in an opponent's row and the calculator will suggest players from the FNTU rating and fill in their rating and weight. You can type in Latin letters (for example “Tretiak”). The database is updated daily.</p>
+        </details>
+        <details>
+          <summary>Is this an official FNTU service?</summary>
+          <p>No. This is an independent calculator that follows the published rules. See the federation's website for the official rating.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="doc partner" aria-labelledby="h-partner">
+      <div class="card">
+        <h2 id="h-partner">Calculator partner — Butterfly UA shop</h2>
+        <p>Butterfly UA (TTMAX) is a <a href="https://ttmax.com.ua/ua">table tennis equipment shop</a> from Kharkiv, Ukraine. ttmax.com.ua offers original Butterfly products: <a href="https://ttmax.com.ua/ua/nakladki">Tenergy and Dignics rubbers</a>, <a href="https://ttmax.com.ua/ua/osnovaniya">Viscaria and Timo Boll ALC blades</a>, <a href="https://ttmax.com.ua/ua/rakety">ready-made rackets assembled by a specialist</a>, as well as balls, clothing and accessories.</p>
+        <p>If you order a blade and rubbers together, they will be glued for free. Delivery across Ukraine by Nova Poshta or Ukrposhta, cash on delivery, free for orders over 5000 UAH. If you are preparing for a rating tournament, the shop will help you choose equipment for your level and style of play.</p>
+        <p><a href="/inventar-butterfly/">More about the shop and its range (in Ukrainian) →</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>FNTU rating database updated: <time id="footerDate">—</time>.</p>
+    <p>This calculator is not an official FNTU service. The calculation follows the published rules of the rating system.</p>
+  </footer>
+</div>
+
+<div class="bar is-hidden" id="bar" role="status">
+  <div class="b-main"><small>Rating after the tournament</small><b id="barRating">0.0</b></div>
+  <span class="b-delta" id="barDelta" data-sign="zero">0.0</span>
+  <button class="btn primary" type="button" id="barMore">Details</button>
+</div>
+
+<div class="dd" id="dd" hidden><div class="dd-list" id="ddList" role="listbox"></div></div>
+
+<template id="matchTpl">
+  <div class="match">
+    <span class="num">1</span>
+    <input class="name" type="text" name="opponentName" data-player="row" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="ddList" placeholder="Opponent's surname" autocomplete="off" autocapitalize="words" spellcheck="false" enterkeyhint="next" aria-label="Opponent's surname">
+    <input class="rate" type="text" name="opponentRating" inputmode="decimal" enterkeyhint="next" placeholder="Rating" autocomplete="off" aria-label="Opponent's rating" title="Opponent's rating">
+    <div class="seg" role="radiogroup" aria-label="Match result">
+      <label><input type="radio" value="win" checked><span>Won</span></label>
+      <label><input type="radio" value="lose"><span>Lost</span></label>
+    </div>
+    <span class="contrib" data-sign="zero" title="Match contribution">0</span>
+    <button class="icon delete" type="button" tabindex="-1" aria-label="Delete opponent">✕</button>
+  </div>
+</template>
+
+<script src="/players.js" defer></script>
+<script src="/calculator.js" defer></script>
+<script src="/app.js" defer></script>
+</body>
+</html>

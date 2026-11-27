@@ -232,3 +232,12 @@ input::placeholder { color: var(--muted); opacity: .55; }
 
 .partner a { color: var(--accent); font-weight: 600; text-decoration: none; }
 .partner a:hover { text-decoration: underline; }
+
+/* Перемикач мови */
+.hero { position: relative; }
+.lang { position: absolute; top: 14px; right: 0; display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 13px; font-weight: 700; }
+.lang a, .lang span { padding: 4px 12px; border-radius: 999px; text-decoration: none; line-height: 1.2; }
+.lang a { color: var(--muted); }
+.lang a:hover { color: var(--text); }
+.lang span { background: var(--accent); color: var(--accent-ink); }
+@media (max-width: 860px) { .lang { top: 10px; } }

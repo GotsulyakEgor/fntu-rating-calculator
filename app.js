@@ -9,6 +9,35 @@
   var seq = 0;
   var restoring = false;
 
+  /* ---------- Мова інтерфейсу (за атрибутом lang у <html>) ---------- */
+  var LANG = document.documentElement.lang === 'en' ? 'en' : 'uk';
+  var LOCALE = LANG === 'en' ? 'en-US' : 'uk-UA';
+  var I18N = {
+    uk: {
+      srcLoaded: function (n) { return 'База гравців: рейтинг ФНТУ, ' + n + ' гравців.'; },
+      srcMissing: 'Базу гравців не завантажено: підстановка рейтингу за прізвищем недоступна, але все інше працює.',
+      none: 'Нікого не знайдено. Можна ввести рейтинг вручну.',
+      fntu: 'ФНТУ', weight: 'вага ', real: ' · реальний ',
+      lSeedRating: 'рейтинг для посіву', lRating: 'рейтинг', lWeight: 'вага', lReal: 'реальний', lSeed: 'для посіву',
+      errUnrec: 'не розпізнано', errExtra: 'зайвий знак', errSign: 'додайте + або −',
+      errNotFound: function (b) { return 'гравця «' + b + '» не знайдено'; },
+      warnSimilar: function (n, name) { return 'Є схожі (' + n + '+): взято «' + name + '». Для точного вибору додайте гравця в рядку нижче.'; },
+      added: function (n) { return 'Додано матчів: ' + n; }
+    },
+    en: {
+      srcLoaded: function (n) { return 'Player database: FNTU rating, ' + n + ' players.'; },
+      srcMissing: 'The player database failed to load: looking up ratings by surname is unavailable, but everything else works.',
+      none: 'No players found. You can enter the rating manually.',
+      fntu: 'FNTU', weight: 'weight ', real: ' · actual ',
+      lSeedRating: 'seeding rating', lRating: 'rating', lWeight: 'weight', lReal: 'actual', lSeed: 'seeding',
+      errUnrec: 'not recognised', errExtra: 'extra sign', errSign: 'add + or −',
+      errNotFound: function (b) { return 'player “' + b + '” not found'; },
+      warnSimilar: function (n, name) { return 'Similar players (' + n + '+): using “' + name + '”. To pick exactly, add the player in a row below.'; },
+      added: function (n) { return 'Matches added: ' + n; }
+    }
+  };
+  var T = I18N[LANG];
+
   /* ---------- Числа ---------- */
   function num(v, fallback) {
     var s = String(v == null ? '' : v).replace(',', '.').replace(/\s/g, '');
@@ -17,7 +46,7 @@
     return isFinite(n) ? n : (fallback || 0);
   }
   function fmt(x) {
-    return RatingCalc.round1(x).toLocaleString('uk-UA', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    return RatingCalc.round1(x).toLocaleString(LOCALE, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   }
   function signed(x) {
     var r = RatingCalc.round1(x);
@@ -41,18 +70,35 @@
       .replace(/[іїыy]/g, 'и').replace(/[єёэ]/g, 'е').replace(/ґ/g, 'г')
       .replace(/\s+/g, ' ').trim();
   }
+  /** Кирилиця -> латиниця (для пошуку гравців англійською: «Sirkevych» знаходить «Сіркевич»). */
+  var TRANSLIT = { а:'a', б:'b', в:'v', г:'h', д:'d', е:'e', ж:'zh', з:'z', и:'y', й:'y', к:'k', л:'l', м:'m', н:'n', о:'o', п:'p', р:'r', с:'s', т:'t', у:'u', ф:'f', х:'kh', ц:'ts', ч:'ch', ш:'sh', щ:'shch', ю:'yu', я:'ya', ь:'', ъ:'', ы:'y', э:'e', ё:'e' };
+  function latinize(s) {
+    return String(s).replace(/[а-яёыэъь]/g, function (c) { return TRANSLIT[c]; });
+  }
+  /** Спрощення латиниці, щоб різні написання збігалися: y/i, kh/h, g/h, w/v. */
+  function latNorm(s) {
+    return String(s).toLowerCase().replace(/[’'ʼ`´]/g, '')
+      .replace(/kh/g, 'h').replace(/[yj]/g, 'i').replace(/g/g, 'h').replace(/w/g, 'v')
+      .replace(/\s+/g, ' ').trim();
+  }
+  PLAYERS.forEach(function (p) { p.lat = latNorm(latinize(p.key)).split(' '); });
   function search(query, limit) {
-    var tokens = norm(query).split(' ').filter(Boolean);
+    var isLatin = /[a-z]/i.test(query);
+    var tokens = (isLatin ? latNorm(query) : norm(query)).split(' ').filter(Boolean);
     if (!tokens.length) return [];
     var first = [], other = [];
     PLAYERS.forEach(function (p) {
-      var ok = tokens.every(function (t) { return p.words.some(function (w) { return w.indexOf(t) === 0; }); });
+      var words = isLatin ? p.lat : p.words;
+      var ok = tokens.every(function (t) { return words.some(function (w) { return w.indexOf(t) === 0; }); });
       if (!ok) return;
-      (p.words[0].indexOf(tokens[0]) === 0 ? first : other).push(p);
+      (words[0].indexOf(tokens[0]) === 0 ? first : other).push(p);
     });
     var res = first.concat(other);
     if (!res.length && tokens.join('').length >= 3) {
-      res = PLAYERS.filter(function (p) { return tokens.every(function (t) { return p.key.indexOf(t) !== -1; }); });
+      res = PLAYERS.filter(function (p) {
+        var key = isLatin ? p.lat.join(' ') : p.key;
+        return tokens.every(function (t) { return key.indexOf(t) !== -1; });
+      });
     }
     return limit ? res.slice(0, limit) : res;
   }
@@ -71,12 +117,12 @@
   if (PLAYERS.length) {
     var d = DATA.updated.split('-');
     var human = d.length === 3 ? d[2] + '.' + d[1] + '.' + d[0] : DATA.updated;
-    src.textContent = 'База гравців: рейтинг ФНТУ, ' + PLAYERS.length.toLocaleString('uk-UA') + ' гравців.';
+    src.textContent = T.srcLoaded(PLAYERS.length.toLocaleString(LOCALE));
     footerDate.textContent = human;
     footerDate.setAttribute('datetime', DATA.updated);
   } else {
     footerDate.parentNode.hidden = true;
-    src.textContent = 'Базу гравців не завантажено: підстановка рейтингу за прізвищем недоступна, але все інше працює.';
+    src.textContent = T.srcMissing;
   }
 
   /* ---------- Випадаючі підказки ---------- */
@@ -103,7 +149,7 @@
     if (!dd.items.length) {
       var e = document.createElement('div');
       e.className = 'dd-empty';
-      e.textContent = 'Нікого не знайдено. Можна ввести рейтинг вручну.';
+      e.textContent = T.none;
       dd.list.appendChild(e);
       return;
     }
@@ -114,9 +160,9 @@
       it.setAttribute('aria-selected', i === dd.idx ? 'true' : 'false');
       var b = document.createElement('b'); b.textContent = p.name;
       var s = document.createElement('small');
-      s.textContent = [p.city, p.birth || ''].filter(Boolean).join(' · ') || 'ФНТУ';
+      s.textContent = [p.city, p.birth || ''].filter(Boolean).join(' · ') || T.fntu;
       var r = document.createElement('span'); r.className = 'r'; r.textContent = fmt(pr(p));
-      var w = document.createElement('i'); w.textContent = 'вага ' + p.weight + (RatingCalc.round1(p.seed) !== RatingCalc.round1(p.rating) ? ' · реальний ' + fmt(pr2(p)) : ''); r.appendChild(w);
+      var w = document.createElement('i'); w.textContent = T.weight + p.weight + (RatingCalc.round1(p.seed) !== RatingCalc.round1(p.rating) ? T.real + fmt(pr2(p)) : ''); r.appendChild(w);
       it.appendChild(b); it.appendChild(s); it.appendChild(r);
       dd.list.appendChild(it);
     });
@@ -173,9 +219,9 @@
       else m.appendChild(document.createTextNode(t));
     };
     add(parts[0]);
-    add(RATING_MODE === 'seed' ? 'рейтинг для посіву' : 'рейтинг', fmt(pr(p)));
-    add('вага', String(p.weight));
-    if (RatingCalc.round1(p.seed) !== RatingCalc.round1(p.rating)) add(RATING_MODE === 'seed' ? 'реальний' : 'для посіву', fmt(pr2(p)));
+    add(RATING_MODE === 'seed' ? T.lSeedRating : T.lRating, fmt(pr(p)));
+    add(T.lWeight, String(p.weight));
+    if (RatingCalc.round1(p.seed) !== RatingCalc.round1(p.rating)) add(RATING_MODE === 'seed' ? T.lReal : T.lSeed, fmt(pr2(p)));
     m.hidden = false;
   }
 
@@ -241,22 +287,22 @@
     return toks.map(function (t) {
       var m = /^([+-])?(.+?)([+-])?$/.exec(t);
       var item = { token: t, ok: false };
-      if (!m) { item.err = 'не розпізнано'; return item; }
-      if (m[1] && m[3]) { item.err = 'зайвий знак'; return item; }
+      if (!m) { item.err = T.errUnrec; return item; }
+      if (m[1] && m[3]) { item.err = T.errExtra; return item; }
       var sign = m[1] || m[3];
       var body = m[2];
-      if (!sign) { item.err = 'додайте + або −'; return item; }
+      if (!sign) { item.err = T.errSign; return item; }
       item.win = sign === '+';
       if (/^\d+(?:[.,]\d+)?$/.test(body)) {
         item.rating = num(body); item.ok = true; item.label = fmt(item.rating);
       } else if (/^[\p{L}'’ʼ.\-]{2,}$/u.test(body)) {
         var found = search(body, 6);
-        if (!found.length) { item.err = 'гравця «' + body + '» не знайдено'; return item; }
+        if (!found.length) { item.err = T.errNotFound(body); return item; }
         item.player = found[0]; item.rating = pr(found[0]); item.ok = true;
         item.label = found[0].name.split(' ')[0] + ' ' + fmt(pr(found[0]));
-        if (found.length > 1) item.warn = 'Є схожі (' + found.length + '+): взято «' + found[0].name + '». Для точного вибору додайте гравця в рядку нижче.';
+        if (found.length > 1) item.warn = T.warnSimilar(found.length, found[0].name);
       } else {
-        item.err = 'не розпізнано';
+        item.err = T.errUnrec;
       }
       return item;
     });
@@ -290,7 +336,7 @@
     bulkPreview.textContent = '';
     var done = document.createElement('span');
     done.className = 'chip win';
-    done.textContent = 'Додано матчів: ' + items.length;
+    done.textContent = T.added(items.length);
     bulkPreview.appendChild(done);
   }
 

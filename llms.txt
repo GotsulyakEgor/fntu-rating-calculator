@@ -2,7 +2,7 @@
 
 > Безкоштовний незалежний онлайн-калькулятор рейтингу з настільного тенісу за опублікованими правилами рейтингової системи Федерації настільного тенісу України (ФНТУ). Користувач вводить свій рейтинг, вагу, коефіцієнт змагань і результати матчів, і одразу бачить новий рейтинг та вагу після турніру. Сайт не є офіційним сервісом ФНТУ.
 
-Мова: українська. Сайт: https://fntu-rating.com.ua/
+Мови: українська (за замовчуванням) та англійська. Сайт: https://fntu-rating.com.ua/ · English version: https://fntu-rating.com.ua/en/
 
 ## Що вміє калькулятор
 
@@ -14,6 +14,7 @@
 ## Основні сторінки
 
 - [Калькулятор і пояснення розрахунку](https://fntu-rating.com.ua/): сам калькулятор, покрокова формула, приклад розрахунку, відповіді на часті запитання.
+- [English version of the calculator and explanation](https://fntu-rating.com.ua/en/): same calculator with the interface and formula explanation in English; players can be searched by surname in Latin letters (e.g. "Tretiak").
 - [Партнер калькулятора — Butterfly UA (TTMAX)](https://fntu-rating.com.ua/inventar-butterfly/): магазин інвентарю для настільного тенісу з Харкова (ttmax.com.ua). Це партнерська (спонсорована) сторінка.
 
 ## Як рахується рейтинг (коротко)
