@@ -213,3 +213,22 @@ input::placeholder { color: var(--muted); opacity: .55; }
 .dd-item .r i { display: block; font-style: normal; font-weight: 500; font-size: 11px; color: var(--muted); }
 .dd-empty { padding: 12px 14px; color: var(--muted); font-size: 14px; }
 @media (max-width: 640px) { .bulk-row .btn { min-height: 48px; } .dd-item { padding: 12px 14px; } }
+
+/* Банер Butterfly UA (TTMAX) */
+.side { position: sticky; top: 16px; display: grid; gap: 16px; align-content: start; }
+.side .result { position: static; }
+.ttmax-banner, .ttmax-strip { display: block; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.ttmax-banner img, .ttmax-strip img { display: block; width: 100%; height: auto; }
+.ttmax-banner--mobile, .ttmax-strip--mobile { display: none; }
+.ttmax-strip { margin-top: 28px; }
+.ttmax-banner-note { margin: -8px 0 0; font-size: 12px; color: var(--muted); text-align: right; }
+@media (max-width: 860px) {
+  .side { position: static; }
+  .ttmax-banner--desktop, .ttmax-strip--desktop { display: none; }
+  .ttmax-banner--mobile, .ttmax-strip--mobile { display: block; width: 100%; max-width: 480px; }
+  .ttmax-banner--tall { max-width: 320px; }
+  .ttmax-banner-note { text-align: left; }
+}
+
+.partner a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.partner a:hover { text-decoration: underline; }

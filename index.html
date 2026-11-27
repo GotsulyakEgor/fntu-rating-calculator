@@ -63,6 +63,31 @@
       "inLanguage": "uk"
     },
     {
+      "@type": "WebPage",
+      "@id": "https://fntu-rating.com.ua/#webpage",
+      "url": "https://fntu-rating.com.ua/",
+      "name": "Калькулятор рейтингу з настільного тенісу ФНТУ онлайн",
+      "inLanguage": "uk",
+      "isPartOf": { "@id": "https://fntu-rating.com.ua/#website" },
+      "mainEntity": { "@id": "https://fntu-rating.com.ua/#app" },
+      "mentions": { "@id": "https://ttmax.com.ua/#business" }
+    },
+    {
+      "@type": "Store",
+      "@id": "https://ttmax.com.ua/#business",
+      "name": "Butterfly UA",
+      "alternateName": "TTMAX",
+      "url": "https://ttmax.com.ua",
+      "parentOrganization": { "@id": "https://ttmax.com.ua/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://ttmax.com.ua/#org",
+      "name": "Butterfly UA",
+      "alternateName": "TTMAX",
+      "url": "https://ttmax.com.ua"
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -174,16 +199,34 @@
         </section>
       </div>
 
-      <aside class="card result" id="result" aria-live="polite" aria-label="Результат">
-        <div class="label">Мій рейтинг після турніру</div>
-        <div class="big" id="closingRating">0.0</div>
-        <div class="stats">
-          <div class="stat"><span class="label">Добавка</span><b id="closingDelta" data-sign="zero">0.0</b></div>
-          <div class="stat"><span class="label">Вага після</span><b id="closingWeight">0.0</b></div>
-          <div class="stat" style="grid-column: 1 / -1"><span class="label">Сума внесків (P − S)</span><b id="contribution">0</b></div>
-        </div>
-        <div class="warn" id="noRating" hidden>Рейтинг не нараховується: потрібна хоча б одна перемога над гравцем із рейтингом і підсумковий рейтинг вище 0.</div>
-      </aside>
+      <div class="side">
+        <aside class="card result" id="result" aria-live="polite" aria-label="Результат">
+          <div class="label">Мій рейтинг після турніру</div>
+          <div class="big" id="closingRating">0.0</div>
+          <div class="stats">
+            <div class="stat"><span class="label">Добавка</span><b id="closingDelta" data-sign="zero">0.0</b></div>
+            <div class="stat"><span class="label">Вага після</span><b id="closingWeight">0.0</b></div>
+            <div class="stat" style="grid-column: 1 / -1"><span class="label">Сума внесків (P − S)</span><b id="contribution">0</b></div>
+          </div>
+          <div class="warn" id="noRating" hidden>Рейтинг не нараховується: потрібна хоча б одна перемога над гравцем із рейтингом і підсумковий рейтинг вище 0.</div>
+        </aside>
+
+        <a class="ttmax-banner ttmax-banner--desktop"
+           href="https://ttmax.com.ua/ua?utm_source=fntu-rating&amp;utm_medium=banner&amp;utm_campaign=fntu_partner&amp;utm_content=desktop_sidebar"
+           rel="sponsored noopener" target="_blank">
+          <img src="ttmax-banner.webp" width="1098" height="630"
+               alt="Butterfly UA — магазин інвентарю Butterfly для настільного тенісу, ttmax.com.ua"
+               decoding="async">
+        </a>
+        <a class="ttmax-banner ttmax-banner--mobile"
+           href="https://ttmax.com.ua/ua?utm_source=fntu-rating&amp;utm_medium=banner&amp;utm_campaign=fntu_partner&amp;utm_content=mobile_after_result"
+           rel="sponsored noopener" target="_blank">
+          <img src="ttmax-banner.webp" width="1098" height="630"
+               alt="Butterfly UA — магазин інвентарю Butterfly для настільного тенісу, ttmax.com.ua"
+               loading="lazy" decoding="async">
+        </a>
+        <p class="ttmax-banner-note">Партнер калькулятора</p>
+      </div>
     </div>
 
     <noscript><p class="note">Для роботи калькулятора потрібен JavaScript. Формули розрахунку наведено нижче на сторінці.</p></noscript>
@@ -282,6 +325,15 @@
           <summary>Чи є цей калькулятор офіційним сервісом ФНТУ?</summary>
           <p>Ні. Це незалежний калькулятор, який виконує розрахунок за опублікованими правилами. Офіційний рейтинг дивіться на сайті федерації.</p>
         </details>
+      </div>
+    </section>
+
+    <section class="doc partner" aria-labelledby="h-partner">
+      <div class="card">
+        <h2 id="h-partner">Партнер калькулятора — магазин Butterfly UA</h2>
+        <p>Butterfly UA (TTMAX) — <a href="https://ttmax.com.ua/ua">магазин інвентарю для настільного тенісу</a> з Харкова. На ttmax.com.ua зібрано оригінальну продукцію Butterfly: <a href="https://ttmax.com.ua/ua/nakladki">накладки Tenergy і Dignics</a>, <a href="https://ttmax.com.ua/ua/osnovaniya">основи Viscaria й Timo Boll ALC</a>, <a href="https://ttmax.com.ua/ua/rakety">готові ракетки, зібрані майстром</a>, а також м'ячі, одяг і аксесуари.</p>
+        <p>Якщо замовити основу й накладки разом, їх безкоштовно поклеять. Доставка Новою Поштою або Укрпоштою по всій Україні, оплата при отриманні, від 5000 грн — безкоштовно. Якщо готуєтеся до рейтингового турніру, у магазині допоможуть підібрати інвентар під ваш рівень і стиль гри.</p>
+        <p><a href="/inventar-butterfly/">Докладніше про магазин і асортимент →</a></p>
       </div>
     </section>
   </main>
