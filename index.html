@@ -35,6 +35,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt">
 <link rel="preload" href="style.css" as="style">
 <link rel="stylesheet" href="style.css">
 
@@ -46,13 +47,25 @@
       "@type": "WebApplication",
       "@id": "https://fntu-rating.com.ua/#app",
       "name": "Калькулятор рейтингу ФНТУ",
+      "alternateName": ["Калькулятор рейтингу з настільного тенісу", "FNTU rating calculator"],
       "url": "https://fntu-rating.com.ua/",
       "description": "Онлайн-калькулятор рейтингу з настільного тенісу за правилами Федерації настільного тенісу України.",
       "applicationCategory": "SportsApplication",
+      "applicationSubCategory": "Калькулятор рейтингу",
       "operatingSystem": "Any",
       "browserRequirements": "Requires JavaScript",
       "inLanguage": "uk",
       "isAccessibleForFree": true,
+      "image": "https://fntu-rating.com.ua/og-image.png",
+      "about": { "@type": "Thing", "name": "Рейтинг ФНТУ з настільного тенісу" },
+      "audience": { "@type": "Audience", "audienceType": "Гравці в настільний теніс, тренери, організатори турнірів в Україні" },
+      "featureList": [
+        "Розрахунок нового рейтингу після турніру за правилами ФНТУ",
+        "Розрахунок нової ваги рейтингу та суми внесків (P − S)",
+        "Пошук гравця за прізвищем у базі рейтингу ФНТУ з автопідстановкою рейтингу й ваги",
+        "Швидке введення результатів матчів одним рядком",
+        "Покрокове пояснення формул і приклад розрахунку"
+      ],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "UAH" }
     },
     {
@@ -86,6 +99,32 @@
       "name": "Butterfly UA",
       "alternateName": "TTMAX",
       "url": "https://ttmax.com.ua"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://fntu-rating.com.ua/#howto",
+      "name": "Як розрахувати рейтинг ФНТУ після турніру",
+      "inLanguage": "uk",
+      "tool": { "@id": "https://fntu-rating.com.ua/#app" },
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Вкажіть свої дані", "text": "Знайдіть себе в рейтингу за прізвищем або введіть рейтинг, вагу до турніру та коефіцієнт змагань вручну." },
+        { "@type": "HowToStep", "position": 2, "name": "Додайте суперників і результати", "text": "Введіть рейтинг або прізвище кожного суперника та позначте перемогу чи поразку; можна ввести всі матчі одним рядком." },
+        { "@type": "HowToStep", "position": 3, "name": "Перегляньте результат", "text": "Калькулятор покаже новий рейтинг після турніру, добавку, нову вагу та суму внесків (P − S)." }
+      ]
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://fntu-rating.com.ua/#terms",
+      "name": "Терміни рейтингу ФНТУ",
+      "inLanguage": "uk",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "R (рейтинг)", "description": "Рейтинг гравця — сила гри в цифрах." },
+        { "@type": "DefinedTerm", "name": "N (вага рейтингу)", "description": "Стабільність рейтингу та змагальна активність гравця." },
+        { "@type": "DefinedTerm", "name": "K (коефіцієнт змагань)", "description": "Чим вищий рівень турніру, тим більший коефіцієнт." },
+        { "@type": "DefinedTerm", "name": "P", "description": "Сума внесків усіх перемог гравця на турнірі." },
+        { "@type": "DefinedTerm", "name": "S", "description": "Сума внесків усіх поразок гравця на турнірі (береться за модулем)." },
+        { "@type": "DefinedTerm", "name": "Опорний рейтинг", "description": "Стартовий рейтинг нового гравця: менше з двох значень — найвищий рейтинг серед переможених і найнижчий серед тих, кому гравець програв." }
+      ]
     },
     {
       "@type": "FAQPage",
